@@ -17,7 +17,7 @@
           </thead>
           <tbody>
             <tr v-for="user in showUsers" :key="user.id">
-              <td>{{ user.name }}</td>
+              <td @click="redirectToUser()">{{ user.name }}</td>
               <td>{{ user.sex }}</td>
               <td>{{ user.birthday }}</td>
             </tr>
@@ -65,6 +65,11 @@ export default {
           birthday: '1994/02/07'
         },
       ]
+    }
+  },
+  methods: {
+    redirectToUser() {
+      this.$router.push('/user')
     }
   }
 }
